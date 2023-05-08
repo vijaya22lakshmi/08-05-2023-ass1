@@ -1,0 +1,14 @@
+import math
+n=1000001
+sieve=[1]*n
+sieve[0]=0
+sieve[1]=0
+m=int(math.sqrt(n))
+for i in range(2,m+1):
+    if sieve[i]==1:
+        for j in range(i*i,n,i):
+            sieve[j]=0
+start,end=map(int,input().split())
+for i in range(start,end):
+    if sieve[i]==1:
+     print(i,end=' ')
